@@ -1,0 +1,13 @@
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dumps temporários
+dumps/*
+!dumps/.gitkeep
+
+# Segredos/configuração local
+.env
+*.env
