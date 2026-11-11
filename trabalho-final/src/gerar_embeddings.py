@@ -7,7 +7,7 @@ Uso (dentro da pasta trabalho-final/, com o banco já criado e carregado):
     python src/gerar_embeddings.py              # só gera sql/04_embeddings.sql
     python src/gerar_embeddings.py --aplicar    # gera o arquivo e atualiza o banco
 
-Variáveis lidas do arquivo .env:
+Variáveis lidas do arquivo .env (veja .env.example):
     GEMINI_API_KEY, DB_HOST, DB_PORT, DB_NAME, DB_USER, DB_PASSWORD
 """
 import argparse
@@ -32,9 +32,9 @@ def conectar():
     return psycopg2.connect(
         host=os.environ.get("DB_HOST", "localhost"),
         port=os.environ.get("DB_PORT", "5432"),
-        database=os.environ.get("DB_NAME", "bd1"),
+        database=os.environ.get("DB_NAME", "bd"),
         user=os.environ.get("DB_USER", "postgres"),
-        password=os.environ.get("DB_PASSWORD", "postgres"),
+        password=os.environ["DB_PASSWORD"],
         options="-c timezone=America/Sao_Paulo",
     )
 
