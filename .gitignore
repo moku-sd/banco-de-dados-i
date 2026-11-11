@@ -11,3 +11,12 @@ dumps/*
 # Segredos/configuração local
 .env
 *.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Saídas geradas (gráficos exportados pela aplicação)
+saida/
